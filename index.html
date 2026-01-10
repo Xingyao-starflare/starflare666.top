@@ -150,6 +150,45 @@
         
         .en,.pt{display:none}
         
+        /* Floating Contact Buttons */
+        .floating-contact-buttons {
+            position: fixed;
+            right: 30px;
+            bottom: 100px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .telegram-btn {
+            background: linear-gradient(135deg, #0088cc 0%, #00a0e9 100%);
+        }
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 4px 25px rgba(0,212,255,0.6); }
+        }
+        
         @media(max-width:1024px){
             .feature-cards{grid-template-columns:repeat(2,1fr)}
             .industry-grid{grid-template-columns:repeat(2,1fr)}
@@ -166,6 +205,15 @@
             .aws-stats,.aws-features{grid-template-columns:1fr}
             .faq-grid{grid-template-columns:1fr}
             main{margin-top:180px}
+            .floating-contact-buttons {
+                right: 15px;
+                bottom: 80px;
+            }
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -232,9 +280,17 @@
             <p class="zh" style="font-size:20px;margin-top:20px;">助力企业降本增效，轻松上云</p>
             <p class="en" style="font-size:20px;margin-top:20px;">Helping Enterprises Reduce Costs, Increase Efficiency, and Easily Migrate to Cloud</p>
             <p class="pt" style="font-size:20px;margin-top:20px;">Ajudando Empresas a Reduzir Custos e Migrar para Nuvem</p>
-            <p class="zh" style="font-size:16px;margin-top:15px;line-height:1.8;">(1)无需信用卡、免备案、隐私安全 (2)即充即用、长期稳定、高效无忧 (3)365*24H技术支持，全渠道支付</p>
-            <p class="en" style="font-size:16px;margin-top:15px;line-height:1.8;">(1)No Credit Card, No Filing, Privacy Security (2)Instant Top-up, Long-term Stability, Worry-free (3)365*24H Technical Support, Multi-channel Payment</p>
-            <p class="pt" style="font-size:16px;margin-top:15px;line-height:1.8;">(1)Sem Cartão, Sem Registro, Segurança (2)Recarga Instantânea, Estabilidade (3)Suporte 365*24H, Pagamento Multi-canal</p>
+            <div class="hero-features" style="margin-top:30px;text-align:left;max-width:700px;margin-left:auto;margin-right:auto;">
+                <p class="zh" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ 无需信用卡、免备案、隐私安全</p>
+                <p class="zh" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ 即充即用、长期稳定、高效无忧</p>
+                <p class="zh" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ 365×24H技术支持，全渠道支付</p>
+                <p class="en" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ No Credit Card, No Filing, Privacy Security</p>
+                <p class="en" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ Instant Top-up, Long-term Stability, Worry-free</p>
+                <p class="en" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ 365×24H Technical Support, Multi-channel Payment</p>
+                <p class="pt" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ Sem Cartão, Sem Registro, Segurança</p>
+                <p class="pt" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ Recarga Instantânea, Estabilidade</p>
+                <p class="pt" style="font-size:18px;line-height:2.2;margin:8px 0;color:#ffffff;">✓ Suporte 365×24H, Pagamento Multi-canal</p>
+            </div>
         </div>
     </section>
 
@@ -863,5 +919,14 @@ function setLang(lang){
 }
 setLang('zh');
 </script>
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact-buttons">
+        <a href="https://t.me/xingyao666_bot" class="floating-btn telegram-btn" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://wa.me/6587335198" class="floating-btn whatsapp-btn" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 </body>
 </html>
